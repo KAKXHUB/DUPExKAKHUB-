@@ -71,7 +71,7 @@ spawn(function()
                 Compass.Parent = game.Players.LocalPlayer.Character;
                 game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(Compass.Poser.Value);
                 Compass:Activate();
-                wait(1);
+                wait(0.5);
                 game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(OldPostiton);
             end
         end)
