@@ -166,7 +166,7 @@ local TabCP2 = Window:MakeTab({
 })
 
 
---local a = game:GetService("Players").LocalPlayer.PlayerGui.QuestDF.Frame.Frame.TopLabel.Text
+local a = game:GetService("Players").LocalPlayer.PlayerGui.QuestDF.Frame.Frame.TopLabel.Text
 
 --local Section = TabCP2:AddSection({
 --	Name = a
@@ -182,6 +182,8 @@ TabCP2:AddToggle({
 })
 
 
+
+if StartICPS then
 getgenv().start = StartICPS
 while getgenv().start do wait(0.4)
 if game.Players.LocalPlayer.Backpack:FindFirstChild("Compass") then
@@ -203,7 +205,7 @@ end
             end
         end
 end
-
+end
 
 
 local TabDrink = Window:MakeTab({
