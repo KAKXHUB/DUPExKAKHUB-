@@ -166,6 +166,11 @@ local TabCP2 = Window:MakeTab({
 })
 
 
+local a = game:GetService("Players").LocalPlayer.PlayerGui.QuestDF.Frame.Frame.TopLabel.Text
+
+local Section = TabCP2:AddSection({
+	Name = a
+})
 
 
 TabCP2:AddToggle({
