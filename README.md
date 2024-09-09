@@ -165,7 +165,9 @@ local TabCP2 = Window:MakeTab({
 	PremiumOnly = false
 })
 
-
+local Section = TabCP2:AddSection({
+	Name = game:GetService("Players").LocalPlayer.PlayerGui.QuestDF.Frame.Frame.TopLabel.Text
+})
 
 
 TabCP2:AddToggle({
