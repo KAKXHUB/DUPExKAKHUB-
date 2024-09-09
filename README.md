@@ -182,7 +182,9 @@ TabCP2:AddToggle({
 })
 
 
-
+spawn(function()
+    while wait() do
+        pcall(function()
 if StartICPS then
 getgenv().start = StartICPS
 while getgenv().start do wait(0.4)
@@ -206,7 +208,9 @@ end
         end
 end
 end
-
+end)
+end
+end);
 
 local TabDrink = Window:MakeTab({
 	Name = "DUPE DRINK",
