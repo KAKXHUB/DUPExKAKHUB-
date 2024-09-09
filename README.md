@@ -176,6 +176,7 @@ TabCP2:AddToggle({
 	end    
 })
 
+--[[
 if not IncreaseCPS then return end;
     while IncreaseCPS do wait(0.4)
     if game.Players.LocalPlayer.Backpack:FindFirstChild("Compass") then
@@ -198,7 +199,7 @@ if not IncreaseCPS then return end;
             end
     end
 end
-
+]]
 
 local TabDrink = Window:MakeTab({
 	Name = "DUPE DRINK",
