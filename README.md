@@ -172,12 +172,12 @@ TabCP2:AddToggle({
 	Name = "Increase Compass but starts reset",
 	Default = false,
 	Callback = function(ICPS)
-		getgenv().startICPS = ICPS
+		StartICPS = ICPS
 	end    
 })
 
 
-    while getgenv().startICPS do wait(0.4)
+    while StartICPS do wait(0.4)
     if game.Players.LocalPlayer.Backpack:FindFirstChild("Compass") then
     game.Players.LocalPlayer.Character.Humanoid:EquipTool(game.Players.LocalPlayer.Backpack["Compass"])
     end
