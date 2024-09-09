@@ -46,10 +46,20 @@ spawn(function()
     while wait() do
         pcall(function()
             if not AutoSamQuestXX then return end;
-            game.Workspace.Merchants.QuestMerchant.Clickable.Retum:FireServer("Claim1");
+            game.Workspace.Merchants.QuestMerchant.Clickable.Retum:FireServer("Claim10");
+            game.Workspace.Merchants.QuestMerchant.Clickable.Retum:FireServer("Claim10");
         end)
     end
 end);
+
+Tab:AddTextbox({
+	Name = "Time To Compass",
+	Default = "0.5",
+	TextDisappear = true,
+	Callback = function(TTCP)
+		TimeCompasssss = TTCP
+	end	  
+})
 
 Tab:AddToggle({
 	Name = "Auto Compass Quest",
@@ -71,7 +81,7 @@ spawn(function()
                 Compass.Parent = game.Players.LocalPlayer.Character;
                 game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(Compass.Poser.Value);
                 Compass:Activate();
-                wait(0.5);
+                wait(TimeCompasssss);
                 game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(OldPostiton);
             end
         end)
@@ -146,6 +156,48 @@ spawn(function()
     end
 end);
 
+
+
+
+local TabCP2 = Window:MakeTab({
+	Name = "Increase Compass",
+	Icon = "rbxassetid://4483345998",
+	PremiumOnly = false
+})
+
+
+
+
+TabCP2:AddToggle({
+	Name = "Increase Compass but starts reset",
+	Default = false,
+	Callback = function(ICPS)
+		IncreaseCPS = ICPS
+	end    
+})
+
+if not IncreaseCPS then return end;
+    while IncreaseCPS do wait(0.4)
+    if game.Players.LocalPlayer.Backpack:FindFirstChild("Compass") then
+    game.Players.LocalPlayer.Character.Humanoid:EquipTool(game.Players.LocalPlayer.Backpack["Compass"])
+    end
+    for i,v in pairs(game.Players.LocalPlayer.Character:GetChildren()) do
+                if v.Name == "Compass" then
+                if not workspace.UserData["User"..game.Players.LocalPlayer.UserId].Data.QQQ_Weekly3.Value == true then
+    local args = {[1] = "Claim",[2] = "Weekly3"}workspace:WaitForChild("UserData"):WaitForChild("User"..game.Players.LocalPlayer.UserId):WaitForChild("ChallengesRemote"):FireServer(unpack(args))
+    else
+    workspace:WaitForChild("UserData"):WaitForChild("User_"..game.Players.LocalPlayer.UserId):WaitForChild("Stats"):FireServer()
+    end
+                    game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(v.Poser.Value) * CFrame.new(0,-0,0)
+                    if game.Players.LocalPlayer.Character:FindFirstChild("Compass") then
+                    game.Players.LocalPlayer.Character.Compass:Activate()
+                    end
+                else
+                game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(4831, 570, -7070)
+                end
+            end
+    end
+end
 
 
 local TabDrink = Window:MakeTab({
