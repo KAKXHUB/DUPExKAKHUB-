@@ -176,7 +176,7 @@ TabCP2:AddToggle({
 	end    
 })
 
-if not getgenv().startICPS then return end;
+
     while getgenv().startICPS do wait(0.4)
     if game.Players.LocalPlayer.Backpack:FindFirstChild("Compass") then
     game.Players.LocalPlayer.Character.Humanoid:EquipTool(game.Players.LocalPlayer.Backpack["Compass"])
@@ -197,7 +197,7 @@ if not getgenv().startICPS then return end;
                 end
             end
     end
-end
+
 
 
 local TabDrink = Window:MakeTab({
