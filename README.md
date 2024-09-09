@@ -172,13 +172,12 @@ TabCP2:AddToggle({
 	Name = "Increase Compass but starts reset",
 	Default = false,
 	Callback = function(ICPS)
-		IncreaseCPS = ICPS
+		getgenv().startICPS = ICPS
 	end    
 })
 
---[[
-if not IncreaseCPS then return end;
-    while IncreaseCPS do wait(0.4)
+if not getgenv().startICPS then return end;
+    while getgenv().startICPS do wait(0.4)
     if game.Players.LocalPlayer.Backpack:FindFirstChild("Compass") then
     game.Players.LocalPlayer.Character.Humanoid:EquipTool(game.Players.LocalPlayer.Backpack["Compass"])
     end
@@ -199,7 +198,7 @@ if not IncreaseCPS then return end;
             end
     end
 end
-]]
+
 
 local TabDrink = Window:MakeTab({
 	Name = "DUPE DRINK",
